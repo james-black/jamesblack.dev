@@ -1,0 +1,20 @@
+.resume-item p {
+	margin-bottom: 3em;
+}
+
+.resume-item-header {
+	overflow: auto;
+	margin-bottom: 0.5em;
+}
+
+.resume-item-header h3, .resume-item-header p {
+	float: left;
+	clear: left;
+	margin: 0;
+}
+
+.resume-item-header h4 {
+	float: right;
+	clear: right;
+	margin: 0;
+}
