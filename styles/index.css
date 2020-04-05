@@ -1,0 +1,48 @@
+header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+nav {
+	display: flex;
+	flex-direction: column;
+}
+
+nav a {
+	padding: 5px 0;
+}
+
+#headshot {
+	max-width: 300px;
+	border-radius: 25%;
+	margin-right: 50px;
+}
+
+#right-content {
+	min-width: 200px;
+}
+
+@media (any-pointer: fine) and (min-width: 701px) {
+	nav a {
+		transition: padding-left 0.25s;
+	}
+
+	nav a:hover {
+		padding-left: 5px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	header {
+		flex-direction: column;
+	}
+
+	#headshot {
+		margin-right: 0;
+	}
+
+	#right-content {
+		text-align: center;
+	}
+}

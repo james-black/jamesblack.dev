@@ -1,29 +1,39 @@
-html {
+html, body {
 	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 16px;
+	width: 100%;
+}
+
+html {
+	display: table;
 }
 
 body {
+	display: table-cell;
+	vertical-align: middle;
 	margin: auto;
-	max-width: 800px;
 }
 
-nav {
-	display: flex;
-	justify-content: center;
+h1, h2, h3, h4, h5, h6, p, a {
+	font-family: arial, sans-serif;
+	color: black
 }
 
 nav a {
-	margin: 0 10px
+	text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-	font-family: monospace;
+@media (any-pointer: fine) {
+	a:hover {
+		color: #888;
+	}
 }
 
-h1, h2, nav {
-	text-align: center;
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #121212;
+	}
+
+	h1, h2, h3, h4, h5, h6, p, a {
+		color: #EEE;
+	}
 }
