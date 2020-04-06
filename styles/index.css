@@ -11,6 +11,11 @@ nav {
 
 nav a {
 	padding: 5px 0;
+	transition: padding-left 0.25s;
+}
+
+nav a:focus {
+	padding-left: 5px;
 }
 
 #headshot {
@@ -24,10 +29,6 @@ nav a {
 }
 
 @media (any-pointer: fine) and (min-width: 701px) {
-	nav a {
-		transition: padding-left 0.25s;
-	}
-
 	nav a:hover {
 		padding-left: 5px;
 	}

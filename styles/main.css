@@ -23,6 +23,10 @@ nav a {
 	text-decoration: none;
 }
 
+a:focus {
+	color: #888;
+}
+
 @media (any-pointer: fine) {
 	a:hover {
 		color: #888;
