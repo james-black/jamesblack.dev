@@ -1,0 +1,56 @@
+/* Accordian Input */
+
+.project input {
+	display: none;
+}
+
+/* Accordian Label */
+
+.project label {
+	color: black;
+	font-family: arial, sans-serif;
+	font-weight: normal;
+	font-size: 20px;
+	display: block;
+	padding: 10px;
+	cursor: pointer;
+	transition: margin-left 0.2s ease-out;
+}
+
+@media (prefers-color-scheme: dark) {
+	.project label {
+		color: #EEE;
+	}
+}
+
+.project label::before {
+	content: "\002B";
+	margin-right: 10px;
+}
+
+.project input:checked + label::before {
+	content: "\2212";
+}
+
+.project label:hover {
+	color: #888;
+}
+
+/* Accordian Content */
+
+.project .content {
+	max-height: 0px;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+	padding: 0 10px;
+}
+
+/*
+Unable to transition height from 0 to auto/100% height. This is a flaw that has not 
+seen a solution over the past 10 years. For now, a little bit a javascript is used 
+to calculate the pixel value of the height.
+
+.project input:checked ~ .content {
+	height: auto;
+}
+*/

@@ -7,6 +7,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../styles/main.css" />
 	<link rel="stylesheet" href="../styles/page.css" />
+	<link rel="stylesheet" href="../styles/projects.css" />
+
+	<script>
+		// Workaround since CSS transitions don't work for height percentages.
+
+		function accordian_toggle(input) {
+			var content = input.parentElement.querySelector(".content");
+			if (input.checked) {
+				content.style.maxHeight = content.scrollHeight + "px";
+			} else {
+				content.style.maxHeight = 0;
+			}
+		}
+
+		window.addEventListener("resize", function() {
+			var elements = document.getElementsByName("accordian");
+			for (var i = 0; i < elements.length; i++) {
+				if (elements[i].checked) {
+					var content = elements[i].parentElement.querySelector(".content");
+					content.style.maxHeight = content.scrollHeight + "px";
+				}
+			}
+		});
+	</script>
 </head>
 
 <body>
@@ -15,9 +39,21 @@
 			<h1>Projects</h1>
 		</header>
 		<section>
-			<div>
-				<a href><h3>CHIP-8 Emulator</h3></a>
-				<p>A CHIP-8 interpreter written in C++ capable of running small graphical programs.</p>
+			<!-- CHIP-8 Emulator -->
+			<div class="project">
+				<input name="accordian" type="checkbox" id="chip8-emulator" onclick="accordian_toggle(this)">
+				<label for="chip8-emulator">CHIP-8 Emulator</label>
+				<div class="content">
+					<p>A CHIP-8 interpreter written in C++ capable of running small graphical programs.</p>
+				</div>
+			</div>
+			<!-- Mandlebulb Viewer -->
+			<div class="project">
+				<input name="accordian" type="checkbox" id="mandlebulb-viewer" onclick="accordian_toggle(this)">
+				<label for="mandlebulb-viewer">Mandlebulb Viewer</label>
+				<div class="content">
+					<p>An interactive 3D Mandlebulb fractal viewer built using JavaScript and WebGL.</p>
+				</div>
 			</div>
 		</section>
 		<nav>
